@@ -72,9 +72,9 @@
 
         <preference name="AndroidLargeHeap" default="true" />
         <preference name="AndroidHardwareAccelerated" default="true" />
-        <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest">
-            <application android:hardwareAccelerated=$AndroidHardwareAccelerated android:largeHeap=$AndroidLargeHeap/>
-        </edit-config>s
+        <edit-config file="AndroidManifest.xml" target="/manifest/application" mode="merge">
+            <application android:largeHeap="true" />
+        </edit-config>
 
         <source-file src="src/android/CameraLauncher.java" target-dir="src/org/apache/cordova/camera" />
         <source-file src="src/android/CordovaUri.java" target-dir="src/org/apache/cordova/camera" />
