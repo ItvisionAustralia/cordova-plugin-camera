@@ -58,8 +58,6 @@
         <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
         </config-file>
-        <preference name="AndroidLargeHeap" default="true" />
-        <preference name="AndroidHardwareAccelerated" default="true" />
         <config-file target="AndroidManifest.xml" parent="application">
           <provider
               android:name="org.apache.cordova.camera.FileProvider"
@@ -70,9 +68,13 @@
                   android:name="android.support.FILE_PROVIDER_PATHS"
                   android:resource="@xml/camera_provider_paths"/>
           </provider>
-          <meta-data android:name="largeHeap" android:value=$AndroidLargeHeap />
-          <meta-data android:name="hardwareAccelerated" android:value=$AndroidHardwareAccelerated />
         </config-file>
+
+        <preference name="AndroidLargeHeap" default="true" />
+        <preference name="AndroidHardwareAccelerated" default="true" />
+        <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest">
+            <application android:hardwareAccelerated=$AndroidHardwareAccelerated android:largeHeap=$AndroidLargeHeap/>
+        </edit-config>s
 
         <source-file src="src/android/CameraLauncher.java" target-dir="src/org/apache/cordova/camera" />
         <source-file src="src/android/CordovaUri.java" target-dir="src/org/apache/cordova/camera" />
