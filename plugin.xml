@@ -70,8 +70,8 @@
                   android:name="android.support.FILE_PROVIDER_PATHS"
                   android:resource="@xml/camera_provider_paths"/>
           </provider>
-          <meta-data android:name="largeHeap" android:value="$AndroidLargeHeap" />
-          <meta-data android:name="hardwareAccelerated" android:value="$AndroidHardwareAccelerated" />
+          <meta-data android:name="largeHeap" android:value=$AndroidLargeHeap />
+          <meta-data android:name="hardwareAccelerated" android:value=$AndroidHardwareAccelerated />
         </config-file>
 
         <source-file src="src/android/CameraLauncher.java" target-dir="src/org/apache/cordova/camera" />
